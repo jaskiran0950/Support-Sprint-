@@ -1,0 +1,101 @@
+.dashboardContainer {
+    padding: 20px 40px;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+}
+
+.welcomeText {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.messageText {
+    margin: 0;
+    color: #777;
+}
+
+.topBarButtons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.dashboardCard {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 32%;
+    margin-right: 25px;
+}
+
+.dashboardCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.cardHeader h4 {
+    font-size: 20px;
+    color: #0b2d40;
+        margin: 0;
+
+}
+
+.cardCount {
+    font-size: 42px;
+    color: #007bff;
+    margin: 0;
+}
+
+.subText {
+    font-size: 16px;
+    color: #777;
+    margin-right: 15px;
+}
+
+.chartsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.chart {
+    width: 80%;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    .chart {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

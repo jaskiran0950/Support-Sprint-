@@ -1,0 +1,213 @@
+.container {
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.headerContent {
+    flex: 1;
+    text-align: center;
+    color: #0b2d40;
+}
+
+.headerActions {
+    margin-left: 20px;
+}
+
+.addButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.addButton:hover {
+    background-color: #45a049;
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.cancelButton:hover {
+    background-color: #da190b;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    width: 600px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modalContent {
+    max-width: 100%;
+}
+
+.formLabel {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inputField,
+.textareaField {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.textareaField {
+    resize: vertical;
+}
+
+.buttonContainer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.question {
+    cursor: pointer;
+}
+
+.answerContainer {
+    overflow: hidden;
+}
+
+.answer {
+    transition: height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.answer.is-expanded {
+    max-height: 1000px;
+    transition: max-height 0.3s ease-in;
+}
+
+.title {
+    text-align: center;
+}
+
+.faqBox {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin: 20px;
+}
+
+.que {
+    background-color: #f1f1f1;
+    color: #08425a;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ans {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid whitesmoke;
+    border-left: 5px solid #0b2d40;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.faq {
+    margin-bottom: 10px;
+}
+
+.answerContainer {
+    overflow: hidden;
+}
+
+.answer {
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+}
+
+.answer.is-expanded {
+    max-height: 1000px;
+    transition: max-height 0.3s ease-in;
+}
+
+.icon {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.icon.expanded {
+    transform: rotate(45deg);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.editIcon,
+.deleteIcon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icon {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.confirmModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    width: 500px;
+    text-align: center;
+}
+
+.confirmModal .modalContent {
+    max-width: 100%;
+}

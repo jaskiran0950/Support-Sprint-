@@ -1,0 +1,66 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b2d40;
+    color: #ffffff;
+    padding: 0.3rem;
+    /* Reduce padding for less vertical space */
+    padding-right: 1rem;
+}
+
+.logo img {
+    height: 45px;
+    /* Reduce logo height to make the header more compact */
+}
+
+.userInfo p {
+    margin: 0;
+}
+
+.userInfo button {
+    background-color: white;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #0b2d40;
+    cursor: pointer;
+    font-size: larger;
+    padding: 10px 20px;
+}
+
+.userInfo:hover button {
+    background-color: #114765;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.navbar {
+    background-color: #0e3a53;
+    height: 42px;
+}
+
+.navbarNav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navItem {
+    margin-left: 0.1rem;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: larger;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navLink:hover {
+    background-color: white;
+    color: #0b2d40;
+}
+

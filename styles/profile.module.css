@@ -1,0 +1,134 @@
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tabButton {
+    background: #f0f0f0;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background 0.3s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabButton:hover {
+    background: #e0e0e0;
+}
+
+.active {
+    background: #0b2d40;
+    color: white;
+    font-weight: bold;
+}
+
+.profileForm {
+    background: #fff;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: relative;
+}
+
+.profileItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.profileLabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profileValue {
+    font-size: 16px;
+    padding-left: 15px;
+    /* Shift field value to the right */
+}
+
+.profileInput {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.editIcon {
+    cursor: pointer;
+    color: #0b2d40;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    /* Center the buttons */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.saveButton,
+.cancelButton {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.saveButton {
+    background: #28a745;
+    color: white;
+}
+
+.saveButton:hover {
+    background: #218838;
+}
+
+.cancelButton {
+    background: #dc3545;
+    color: white;
+}
+
+.cancelButton:hover {
+    background: #c82333;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.link {
+    color: #0b2d40;
+    text-decoration: none;
+}
+

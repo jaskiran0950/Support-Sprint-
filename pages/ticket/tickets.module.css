@@ -1,0 +1,409 @@
+
+.ticket_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    margin-top: 20px;
+    }
+
+.ticket_form {
+    background-color: #f9f9f9;
+    padding: 4px 80px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+}
+
+.ticket_btn {
+    background-color: rgb(25, 171, 25);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.cancle_btn {
+    background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin: 10px;
+
+}
+
+.ticket_btn:hover{
+    background-color: green;
+}
+.cancle_btn:hover{
+    background-color: #c0392b;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.heading {
+    text-align: center;
+    color: #0b2d40;
+    font-weight: b;
+}
+
+
+.ticketDetailsContainer {
+    display: flex;
+    padding: 20px;
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.mainContent {
+    flex: 3;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.ticketHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.ticketInfo {
+    flex: 1;
+    margin-bottom: 0%;
+}
+
+.ticketControls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ticketBody p {
+    margin: 10px 0;
+}
+
+.ticketBody strong {
+    display: inline-block;
+    width: 150px;
+}
+
+.messageBox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.messageInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.sendMessageButton {
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(25, 171, 25);
+    color: white;
+    cursor: pointer;
+}
+
+.sendMessageButton:hover {
+    background-color: green;
+}
+
+.closeTicketButton {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.closeTicketButton:hover {
+    background-color: #c0392b;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown label {
+    margin-bottom: 5px;
+}
+
+.dropdown select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.editInput,
+.editTextarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.saveMessageButton{
+    padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(25, 171, 25);
+        color: white;
+        cursor: pointer;
+        margin-bottom: 20px
+}
+
+.saveMessageButton:hover {
+    background-color: green;
+}
+
+
+
+
+
+.ticketDetailsContainer .badge {
+    display: inline-block;
+    padding: 0.3em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    margin-right: 0.5em;
+}
+
+.ticketDetailsContainer .badgeNew {
+    background-color: #007bff;
+    color: white;
+}
+
+.ticketDetailsContainer .badgeInProgress {
+    background-color: #ffc107;
+    color: white;
+}
+
+.ticketDetailsContainer .badgeCompleted {
+    background-color: #28a745;
+    color: white;
+}
+
+.ticketDetailsContainer .badgeClosed {
+    background-color: #28a745;
+    color: white;
+}
+
+.ticketDetailsContainer .badgeLow {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.ticketDetailsContainer .badgeMedium {
+    background-color: #ffc107;
+        color: white;
+}
+
+.ticketDetailsContainer .badgeHigh {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background: white;
+    padding: 2em;
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.confirmButton {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin: 10px;
+}
+
+.cancelButton {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.reopenTicketButton{
+    padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 20px;
+}
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.commentHeaderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentBody {
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+     max-height: 400px;
+}
+
+.commentItem {
+    padding: 10px;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        background-color: #f2f6f7;
+        border-left: 7px solid #0b2d40;
+        margin: 18px;}
+
+.commentItem:last-child {
+    border-bottom: none;
+}
+
+.commentAuthor {
+    font-weight: bold;
+    font-size: small;
+    display: flex;
+    align-items: center;
+     margin-bottom: 5px;
+}
+
+.commentDate {
+    margin-right: 10px;
+    font-size: 0.8em;
+    color: gray;
+}
+
+.commentMessage {
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-left: 45px;
+    padding-right: 25px;
+}
+
+.deleteCommentIcon {
+    cursor: pointer;
+    margin-left: 10px;
+        color: #c0392b;
+}
+
+.editIcon {
+        cursor: pointer;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #0b2d40;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.feedbackContainer {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+.feedback {
+    margin-top: 10px;
+}
+

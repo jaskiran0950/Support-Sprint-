@@ -1,0 +1,275 @@
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contactBox {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #0b2d40;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.editButton,
+.deleteButton {
+    background-color: rgb(25, 171, 25);
+    color: #fff;
+    border: none;
+    padding: 5px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.editButton:hover {
+    background-color: green;
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+        padding: 5px 10px;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.enterdata {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.submitButton {
+    background-color: rgb(25, 171, 25);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+}
+
+.submitButton:hover {
+    background-color: green;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    background-color: #fff;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.enterdata.error {
+    border-color: red;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+.submitButton1 {
+    background-color: rgb(25, 171, 25);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+.submitButton2 {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4em 0.5em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.badge-pending {
+    background-color:#ffc107;
+    color: white;
+}
+
+.badge-completed {
+    background-color: green;
+    color: white;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tabButton {
+    flex: 1;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+}
+
+.tabButton:hover {
+    background-color: #f9f9f9;
+}
+
+.active {
+    border-bottom: 2px solid #0b2d40;
+    font-weight: bold;
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.title {
+    color: #0b2d40;
+    font-weight: bolder;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.searchInput {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px; 
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.addOrganizationButton {
+    background-color: rgb(25, 171, 25);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; 
+}
+
+.addOrganizationButton:hover {
+    background-color: green;
+}
+
+.statusFilter {
+    margin-left: 5px; 
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.noResults {
+    text-align: center;
+    font-size: 1.2em;
+    color: #999;
+}
+
+.filterContainer {
+    display: flex;
+    align-items: center;
+}
+
+.enterdataC {
+    margin-top: 30px;
+}
+
+.viewDetailsButton{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.viewDetailsButton:hover {
+    background-color: #3798ff;
+}

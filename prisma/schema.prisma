@@ -1,0 +1,172 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  SuperAdmin
+  Admin
+  Support
+  User
+}
+
+model users {
+  id              String       @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name            String       @db.VarChar(255)
+  email           String       @unique @db.VarChar(255)
+  password        String
+  mobile          String       @db.VarChar(255)
+  organization    organization @relation(fields: [organization_id], references: [id])
+  organization_id String       @db.Uuid
+  role            UserRole
+  isActive        Boolean      @default(true)
+  created_by      String       @db.VarChar(255)
+  updated_by      String       @db.VarChar(255)
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime     @default(now()) @db.Timestamptz(6)
+  ticketsAssigned ticket[]     @relation("AssignedToUser")
+  ticketsCreated  ticket[]     @relation("CreatedByUser")
+  ticketsUpdated  ticket[]     @relation("UpdatedByUser")
+  faqsCreated     faq[]        @relation("FAQCreatedByUser")
+  faqsUpdated     faq[]        @relation("FAQUpdatedByUser")
+  feedbacksCreated feedbacks[] @relation("FeedbackCreatedByUser")
+  commentsCreated comments[]   @relation("CommentCreatedByUser")
+
+}
+
+enum Status {
+  New
+  InProgress
+  Closed
+}
+
+enum Priority {
+  High
+  Medium
+  Low
+}
+
+model ticket {
+  id              String       @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  title           String
+  description     String
+  tags            String
+  message         String
+  assigned_to     String?      @db.Uuid
+  assigned_to_id  users?       @relation("AssignedToUser", fields: [assigned_to], references: [id])
+  priority        Priority?
+  reopen          Int
+  status          Status       @default(New)
+  organization_id String       @db.Uuid
+  organization    organization @relation(fields: [organization_id], references: [id])
+  created_by      String       @db.Uuid
+  created_by_id   users        @relation("CreatedByUser", fields: [created_by], references: [id])
+  updated_by      String       @db.Uuid
+  updated_by_id   users        @relation("UpdatedByUser", fields: [updated_by], references: [id])
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime     @default(now()) @db.Timestamptz(6)
+  mail            mails[]
+  feedback        feedbacks[]
+  comment         comments[]
+}
+
+model tags {
+  id   Int    @id @default(autoincrement())
+  name String
+  organization_id String       @db.Uuid
+  organization    organization @relation(fields: [organization_id], references: [id])
+}
+
+model organization {
+  id         String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name       String   @db.VarChar(255)
+  email      String   @unique @db.VarChar(255)
+  phone      String   @db.VarChar(255)
+  address    String   @db.VarChar(500)
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @db.Timestamptz(6)
+  users      users[]
+  ticket     ticket[]
+  faq        faq[]
+  tags       tags[]
+}
+
+enum ContactStatus {
+  Pending
+  Completed
+}
+
+model contact_us {
+  id           Int           @id @default(autoincrement())
+  name         String        @db.VarChar(255)
+  email        String        @unique @db.VarChar(255)
+  phone        String        @db.VarChar(255)
+  address      String        @db.VarChar(500)
+  organization String        @db.VarChar(255)
+  message      String        @db.VarChar(500)
+  created_at   DateTime      @default(now()) @db.Timestamptz(6)
+  status       ContactStatus @default(Pending)
+}
+
+model forgot_password {
+  id         Int      @id @default(autoincrement())
+  email      String   @db.VarChar(255)
+  otp        String   @db.VarChar(25)
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+}
+
+model faq {
+  id              String       @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  question        String       @db.VarChar(500)
+  answer          String       @db.VarChar(900)
+  created_by      String       @db.Uuid
+  created_by_id   users        @relation("FAQCreatedByUser", fields: [created_by], references: [id])
+  updated_by      String       @db.Uuid
+  updated_by_id   users        @relation("FAQUpdatedByUser", fields: [updated_by], references: [id])
+  organization_id String       @db.Uuid
+  organization    organization @relation(fields: [organization_id], references: [id])
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime     @default(now()) @db.Timestamptz(6)
+}
+
+model mails {
+  id         String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  subject    String   @db.VarChar(255)
+  to         String   @db.VarChar(255)
+  from       String   @db.VarChar(255)
+  message    String   @db.VarChar(500)
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  ticket     ticket?   @relation(fields: [ticket_id], references: [id])
+  ticket_id  String?   @db.Uuid
+}
+
+model feedbacks {
+  id              String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  ticket          ticket   @relation(fields: [ticket_id], references: [id])
+  ticket_id       String   @db.Uuid
+  message         String?   @db.VarChar(500)
+  rating          Int
+  created_by      String   @db.Uuid
+  created_by_id   users    @relation("FeedbackCreatedByUser", fields: [created_by], references: [id])
+  created_at      DateTime @default(now()) @db.Timestamptz(6)
+}
+
+model comments {
+  id              String       @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  message         String       @db.VarChar(500)
+  ticket_id       String       @db.Uuid
+  ticket          ticket       @relation(fields: [ticket_id], references: [id])
+  created_by      String       @db.Uuid
+  created_by_id   users        @relation("CommentCreatedByUser", fields: [created_by], references: [id])
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+}
